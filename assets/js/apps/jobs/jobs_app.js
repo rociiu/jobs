@@ -15,6 +15,17 @@ JobsBoard.module('JobsApp', function(JobsApp, JobsBoard, Backbone, Marionette, $
     }
   };
 
+  JobsBoard.on("jobs:list", function(){
+    JobsBoard.navigate("jobs")
+    API.listJobs();
+  })
+
+  JobsBoard.on("job:show", function(id){
+    JobsBoard.navigate("jobs/" + id)
+    API.showJob(id);
+  })
+  
+
   JobsBoard.addInitializer(function() {
     new JobsApp.Router({
       controller: API
