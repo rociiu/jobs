@@ -9,9 +9,11 @@ JobsBoard.module('JobsApp', function(JobsApp, JobsBoard, Backbone, Marionette, $
   var API = {
     listJobs: function() {
       JobsApp.List.Controller.listJobs();
+      JobsBoard.HeaderApp.List.Controller.setActiveHeader("jobs");
     },
     showJob: function(id) {
       JobsApp.Show.Controller.showJob(id);
+      JobsBoard.HeaderApp.List.Controller.setActiveHeader("jobs");
     }
   };
 
