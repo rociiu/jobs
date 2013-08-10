@@ -7,7 +7,10 @@ JobsBoard.module('Entities', function(Entities, JobsBoard, Backbone, Marionette,
 
   Entities.JobCollection = Backbone.Collection.extend({
     url: "http://ruby-china.org/api/topics/node/25.json",
-    model: Entities.Job
+    model: Entities.Job,
+    comparator: function(job) {
+      return -new Date(job.get('created_at'));
+    }
   })
 
   var API = {
