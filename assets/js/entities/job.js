@@ -20,14 +20,27 @@ JobsBoard.module('Entities', function(Entities, JobsBoard, Backbone, Marionette,
         }
       })
       var promise = defer.promise()
-      $.when(promise).done(function(jobs) {
-      })
+      return promise;
+    },
+    getJobEntity: function(id) {
+      var job = new Entities.Job({id: id});
+      var defer = $.Deferred();
+      job.fetch({
+        success: function(data) {
+          defer.resolve(data)
+        }
+      });
+      var promise = defer.promise();
       return promise;
     }
   }
 
   JobsBoard.reqres.setHandler("job:entities", function(){
     return API.getJobEntities();
+  });
+
+  JobsBoard.reqres.setHandler("job:entity", function(id){
+    return API.getJobEntity(id);
   });
 
   

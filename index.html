@@ -55,6 +55,10 @@
       <td><a href="#"><%= title %></a></td>
       <td><%= created_at %></td>
     </script>
+    <script type="text/template" id="job-view">
+      <h1><%= title %></h1>
+      <%- body_html %>
+    </script>
 
     <!-- JavaScript plugins (requires jQuery) -->
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -67,6 +71,8 @@
     <script src="./assets/js/entities/job.js"></script>
     <script src="./assets/js/apps/jobs/list/list_view.js"></script>
     <script src="./assets/js/apps/jobs/list/list_controller.js"></script>
+    <script src="./assets/js/apps/jobs/show/show_view.js"></script>
+    <script src="./assets/js/apps/jobs/show/show_controller.js"></script>
     <script src="./assets/js/apps/jobs/jobs_app.js"></script>
     <script type="text/javascript">
       JobsBoard.start()

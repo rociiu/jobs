@@ -8,9 +8,6 @@ JobsBoard.module("JobsApp.List", function(List, JobsBarod, Backbone, Marionette,
         })
         JobsBoard.mainRegion.show(jobsListView);
       });
-    },
-    
-    showJob: function() {
     }
   }
 })

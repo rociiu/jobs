@@ -11,7 +11,7 @@ JobsBoard.module('JobsApp', function(JobsApp, JobsBoard, Backbone, Marionette, $
       JobsApp.List.Controller.listJobs();
     },
     showJob: function(id) {
-      console.log("should list job: " + id)
+      JobsApp.Show.Controller.showJob(id);
     }
   };
 
